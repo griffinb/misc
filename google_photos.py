@@ -2,11 +2,6 @@ import os
 import time
 
 def remove_unwanted_files():
-    # .json = json files
-    # (1) = duplicates
-    # Screenshot = screenshots
-    time.sleep(1)
-    print ''
     unwanted = ['.json', '.html', '(1)', 'Screenshot']
     for item in unwanted:
         print 'Removing {} files...'.format(item)
@@ -18,7 +13,6 @@ def remove_unwanted_files():
                     os.remove(file_to_rm)
 
 def remove_empty_directories():
-    print ''
     print 'Removing empty directories...'
     for dirname, dirnames, filenames in os.walk('.'):
         if not filenames and not dirnames:
