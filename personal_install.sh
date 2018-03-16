@@ -1,39 +1,40 @@
-sudo apt-get update
+sudo apt -y update
+sudo apt -y dist-upgrade
 
 # Editors
-sudo apt-get install -y vim
-sudo apt-get install -y atom
+sudo apt install -y vim
+sudo apt install -y atom
 
 # Terminal emulator
-sudo apt-get install -y terminator
+sudo apt install -y terminator
 
 # Git
-sudo apt-get install -y git
+sudo apt install -y git
 
 # Curl
-sudo apt-get install -y curl
+sudo apt install -y curl
 
 # Oh my zsh
-sudo apt-get install -y zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo apt install -y zsh
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Browsers
-snap install firefox
-snap install chromium
+sudo snap install firefox
+sudo snap install chromium
 
 # REST client
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
     | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install insomnia
+sudo apt -y update
+sudo apt -y install insomnia
 
 # Python
-sudo apt-get install -y build-essential python-dev libffi-dev libssl-dev zlib1g-dev \
+sudo apt install -y build-essential python-dev libffi-dev libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
 python-pip python3-pip libpq-dev
-pip install virtualenv
+pip install -y virtualenv
 
 # aws command line tools
 pip install awscli
@@ -42,15 +43,15 @@ pip install awslogs
 # Signal
 curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update && sudo apt install signal-desktop
+sudo apt -y update && sudo apt install -y signal-desktop
 
 # Arc Theme
-sudo apt-get install autoconf
-sudo apt-get install automake
-sudo apt-get install libgtk-3-dev
-sudo apt-get install gnome-themes-standard
-sudo apt-get install gtk2-engines-murrine
-sudo apt-get install gnome-tweak-tool
+sudo apt install -y autoconf
+sudo apt install -y automake
+sudo apt install -y libgtk-3-dev
+sudo apt install -y gnome-themes-standard
+sudo apt install -y gtk2-engines-murrine
+sudo apt install -y gnome-tweak-tool
 git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
 ./autogen.sh --prefix=/usr
 sudo make install
@@ -62,8 +63,8 @@ sudo make install
 
 # Moka Icons
 sudo add-apt-repository ppa:moka/daily
-sudo apt-get update
-sudo apt-get install moka-icon-theme faba-icon-theme faba-mono-icons
+sudo apt -y update
+sudo apt -y install moka-icon-theme faba-icon-theme faba-mono-icons
 
 # Arc Firefox theme
 git clone https://github.com/horst3180/arc-firefox-theme && cd arc-firefox-theme
@@ -76,6 +77,3 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval "uint32 10"
 
 # Docker
 
-# Setup dev repos
-mkdir -p ~/code
-git clone git@github.com:griffinb/dotfiles.git ~/code/dotfiles
