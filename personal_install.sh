@@ -1,4 +1,4 @@
-sudo apt -y update
+sudo apt update
 sudo apt -y dist-upgrade
 
 # Editors
@@ -16,7 +16,7 @@ sudo apt install -y curl
 
 # Oh my zsh
 sudo apt install -y zsh
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Browsers
 sudo snap install firefox
@@ -27,7 +27,7 @@ echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
     | sudo apt-key add -
-sudo apt -y update
+sudo apt update
 sudo apt -y install insomnia
 
 # Python
@@ -43,7 +43,7 @@ pip install awslogs
 # Signal
 curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt -y update && sudo apt install -y signal-desktop
+sudo apt update && sudo apt install -y signal-desktop
 
 # Arc Theme
 sudo apt install -y autoconf
@@ -63,7 +63,7 @@ sudo make install
 
 # Moka Icons
 sudo add-apt-repository ppa:moka/daily
-sudo apt -y update
+sudo apt update
 sudo apt -y install moka-icon-theme faba-icon-theme faba-mono-icons
 
 # Arc Firefox theme
@@ -76,4 +76,15 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay "uint32 300"
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval "uint32 10"
 
 # Docker
-
+sudo apt remove docker docker-engine docker.io
+sudo apt update
+sudo apt -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt -y install docker-ce
+# Run the following command to get the latest version:
+# apt-cache madison docker-ce
+sudo apt-get install docker-ce=17.12.1~ce-0~ubuntu
+# Only use if needed:
+# sudo usermod -aG docker $USER
