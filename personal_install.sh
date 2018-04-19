@@ -88,3 +88,13 @@ sudo apt -y install docker-ce
 sudo apt-get install docker-ce=17.12.1~ce-0~ubuntu
 # Only use if needed:
 # sudo usermod -aG docker $USER
+
+# pyenv
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+pyenv update
+echo 'export PATH="/home/griffin/.pyenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+
+pyenv install 2.7.14
+pyenv install 3.6.3
