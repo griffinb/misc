@@ -18,6 +18,9 @@ sudo apt install -y curl
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# Mouse scrolling adjustment app
+sudo apt-get install imwheel
+
 # Browsers
 sudo snap install firefox
 sudo snap install chromium
