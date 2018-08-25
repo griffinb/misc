@@ -31,6 +31,10 @@ apt -y install docker-ce=18.03.0~ce-0~ubuntu
 # Only use if needed:
 # usermod -aG docker $USER
 
+# Oh my zsh
+apt install -y zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # pyenv
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 echo 'export PATH="/home/vagrant/.pyenv/bin:$PATH"' >> ~/.zshrc
@@ -40,7 +44,3 @@ source .zshrc
 pyenv update
 pyenv install 2.7.14
 pyenv install 3.6.3
-
-# Oh my zsh
-apt install -y zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
