@@ -37,7 +37,7 @@ sudo apt -y install insomnia
 sudo apt install -y build-essential python-dev libffi-dev libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
 python-pip python3-pip libpq-dev
-pip install -y virtualenv
+pip install virtualenv
 
 # aws command line tools
 pip install awscli
