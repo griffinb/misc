@@ -66,7 +66,7 @@ git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-t
 sudo make install
 
 # Moka Icons
-sudo add-apt-repository ppa:moka/daily
+sudo add-apt-repository ppa:snwh/ppa
 sudo apt update
 sudo apt -y install moka-icon-theme faba-icon-theme faba-mono-icons
 
