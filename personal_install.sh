@@ -100,5 +100,5 @@ echo 'export PATH="/home/griffin/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
-pyenv install 2.7.14
-pyenv install 3.6.3
+pyenv install 2.7.16
+pyenv install 3.7.3
